@@ -82,7 +82,7 @@ class SocialLoginController extends Controller
             // login the user
             Auth::login($user, true);
 
-            return redirect()->route('/');
+            return redirect('/');
         } catch (Exception $e) {
             return $this->sendFailedResponse($e->getMessage());
         }
