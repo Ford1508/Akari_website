@@ -14,9 +14,9 @@ class AddSocialColumnInUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('provider', 20)->nullable();
-            $table->string('provider_id')->nullable();
-            $table->string('access_token')->nullable();
+            $table->text('provider')->nullable();
+            $table->text('provider_id')->nullable();
+            $table->text('access_token')->nullable();
         });
     }
 
