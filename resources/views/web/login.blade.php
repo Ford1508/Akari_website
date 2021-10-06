@@ -48,20 +48,18 @@
 
             @csrf
 
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Login</h1>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" value="{{ old('email') }}">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">ログイン</h1>
+            <input type="email" id="inputEmail" class="form-control" placeholder="ユーザー名またはメールアドレス" name="email" value="{{ old('email') }}">
+            <input type="password" id="inputPassword" class="form-control" placeholder="パスワード" name="password">
 
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>Login</button>
+            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i>ログイン</button>
             <div class="social-login">
-                <a href="{{ route('web.social.oauth', ['driver' => 'facebook']) }}"><button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i>Login
-                        with Facebook</span></button></a>
-                <a href="{{ route('web.social.oauth', ['driver' => 'google']) }}"><button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i>Login
-                        with Google+</span></button></a>
+                <a href="{{ route('web.social.oauth', ['driver' => 'facebook']) }}"><button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i>Facebookアカウントでログイン</span></button></a>
+                <a href="{{ route('web.social.oauth', ['driver' => 'google']) }}"><button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i>Googleアカウントでログイン</span></button></a>
             </div>
             <hr>
             <a href="{{ route('web.form.register') }}"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
-                Register account</button></a>
+            Akari.comを登録する</button></a>
         </form>
     </div>
 </body>
