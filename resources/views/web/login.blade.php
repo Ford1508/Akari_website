@@ -60,6 +60,8 @@
             <hr>
             <a href="{{ route('web.form.register') }}"><button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
             Akari.comを登録する</button></a>
+            <a href="{{ route('web.home') }}"><button class="btn btn-secondary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
+            Home</button></a>
         </form>
     </div>
 </body>

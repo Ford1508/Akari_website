@@ -44,7 +44,7 @@
             </div>
             <nav class="templatemo-left-nav">
                 <ul>
-                    <li><a href="#" ><i class="fa fa-home fa-fw"></i>Home</a></li>
+                    <li><a href="{{ route('web.home') }}" ><i class="fa fa-home fa-fw"></i>Home</a></li>
                     <li><a href="{{ route('parent_category.list') }}"><i class="fa fa-list" aria-hidden="true"></i>Parent Categories</a></li>
                     <li><a href="{{ route('category.list') }}"><i class="fa fa-list" aria-hidden="true"></i>Categories</a></li>
                     <li><a href="{{ route('user.list') }}"><i class="fa fa-users fa-fw"></i>Users</a></li>
