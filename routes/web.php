@@ -17,6 +17,21 @@ Route::group(['namespace' => 'Client'], function () {
     Route::get('/', 'HomeController@index')->name('web.home');
 });
 
+Route::get('/userprofile', function () {
+    return view('web/userprofile');
+});
+
+Route::get('userprofile/{id}','UserController@userprofile')->name('web.userprofile');
+
+
+Route::get('/achiver', function () {
+    return view('web/achiver');
+});
+
+Route::get('/postgallery', function () {
+    return view('web/postgallery');
+});
+
 // Client
 Route::group(['namespace' => 'Auth'], function () {
     // Login, logout
