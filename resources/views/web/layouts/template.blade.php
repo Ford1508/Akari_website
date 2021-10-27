@@ -55,9 +55,11 @@
             <div class="dropdown">
                 <button class="dropbtn"><i class="fas fa-user" id="login-btn"></i></button>
                 <div class="dropdown-content">
-                    <a href="#">Bài đăng của tôi</a>
-                    <a href="#">Lưu trữ</a>
-                    <a href="#">Thông tin cá nhân</a>
+                    @if (Auth::user()->role == 1)
+                        <a href="{{ route('web.postgallery') }}" target="_blank">Bài đăng của tôi</a>
+                        <a href="{{ route('web.achiver') }}" target="_blank">Lưu trữ</a>
+                    @endif
+                    <a href="{{ route('web.userprofile') }}" target="_blank">Thông tin cá nhân</a>
                     <a href="{{ route('web.handle.logout') }}">Logout</a>
                 </div>
             </div>
