@@ -3,79 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
-
-        <!-- Fonts -->
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
-
-        <style>
-            
-            .zoom:hover {
-                transition: transform .3s;
-                transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-            }
-        </style>
-        <style>
-            .card-1 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            background-color: #fff;
-            background-clip: border-box;
-            border: 1px solid rgba(0, 0, 0, 0.125);
-            border-radius: 0.25rem;
-            }
-        </style>
-        <style>
-            .card-1:hover {
-                transition: box-shadow 0.2s ease-in-out;
-                transition: transform .4s;
-                transform: scale(0.9); 
-                box-shadow: 0 0 30px 0 rgb(217, 255, 0);
-            }
-            
-        </style>
-
-        <style>
-            .container {
-                box-shadow: 0 0 35px 0 rgba(17, 0, 255, 0.26);
-                border: 1px solid rgb(129, 0, 0);
-            }
-            
-        </style>
-        <style>
-            .container:hover {
-                box-shadow: 0 0 60px 0 rgba(155, 2, 134, 0.589);
-                transition: box-shadow 0.5s ease-in-out;
-            }
-            
-        </style>
-        <style>
-            .iconview {
-                margin-left: 66%
-            }
-        </style>
-        <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-
-            li {
-                float: left;
-            }
-        </style>
-        <style>
-            h1 {
-                margin-left: 2%;
-                margin-top: 1%
-            }
-        </style>
+        <link href="{{asset('assets/web/css/post.css')}}" rel="stylesheet" type="text/css">
     </head>
     <body style="background-image: url('https://itvn.blog/wp-content/uploads/2020/07/Top-50-h%C3%ACnh-n%E1%BB%81n-m%C3%A1y-t%C3%ADnh-4k-%C4%91%E1%BA%B9p-v%C3%A0-ch%E1%BA%A5t-l%C6%B0%E1%BB%A3ng-nh%E1%BA%A5t-scaled.jpg')">
         <div style="margin-top: 5%"></div>
@@ -247,7 +177,6 @@
                 </div>
             </div>
         </div>
-        <script src="js/app.js">
-        </script>
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
