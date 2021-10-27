@@ -84,3 +84,4 @@ Route::namespace('Admin')->prefix('ad')->group(function () {
         });
     });
 });
+Route::resource('/baiviet','BaivietController');

@@ -61,6 +61,7 @@
                     <a href="{{ route('web.handle.logout') }}">Logout</a>
                 </div>
             </div>
+            <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a>
         @else
             <a href="{{ route('web.form.login') }}" class="login">Login</a>
         @endif

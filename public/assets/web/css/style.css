@@ -147,6 +147,11 @@ header .search-bar-container label{
   font-size: 3rem;
   margin-left: 1.5rem;
 }
+header #plus-btn{
+  color:#fff;
+  text-decoration: none;
+  font-size: 20px;
+}
 
 header .search-bar-container label:hover{
   color:var(--orange);
