@@ -55,7 +55,10 @@
             <div class="dropdown">
                 <button class="dropbtn"><i class="fas fa-user" id="login-btn"></i></button>
                 <div class="dropdown-content">
-                    @if (Auth::user()->role == 1)
+                    @php  
+                        $user = \App\Models\User::find(Auth::user()->id);
+                    @endphp
+                    @if ($user->role == 1)
                         <a href="{{ route('web.postgallery') }}" target="_blank">私の投稿</a>
                         <a href="{{ route('web.achiver') }}" target="_blank">アーカイバ</a>
                     @endif
