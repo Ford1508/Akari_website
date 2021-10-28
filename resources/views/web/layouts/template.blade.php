@@ -55,9 +55,11 @@
             <div class="dropdown">
                 <button class="dropbtn"><i class="fas fa-user" id="login-btn"></i></button>
                 <div class="dropdown-content">
-                    <a href="#">私の投稿</a>
-                    <a href="#">アーカイバ</a>
-                    <a href="#">個人情報</a>
+                    @if (Auth::user()->role == 1)
+                        <a href="{{ route('web.postgallery') }}" target="_blank">私の投稿</a>
+                        <a href="{{ route('web.achiver') }}" target="_blank">アーカイバ</a>
+                    @endif
+                    <a href="{{ route('web.userprofile') }}" target="_blank">個人情報</a>
                     <a href="{{ route('web.handle.logout') }}">サインアウト</a>
                 </div>
             </div>
