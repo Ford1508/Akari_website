@@ -60,8 +60,8 @@
                     @endphp
                     @if ($user->role == 1)
                         <a href="{{ route('web.postgallery') }}" target="_blank">私の投稿</a>
-                        <a href="{{ route('web.achiver') }}" target="_blank">アーカイバ</a>
                     @endif
+                    <a href="{{ route('web.achiver') }}" target="_blank">アーカイバ</a>
                     <a href="{{ route('web.userprofile') }}" target="_blank">個人情報</a>
                     <a href="{{ route('web.handle.logout') }}">サインアウト</a>
                 </div>
