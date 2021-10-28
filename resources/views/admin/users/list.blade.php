@@ -24,7 +24,10 @@
                         <td align="center"><span class="white-text">#</span></td>
                         <td align="center"><span class="white-text">Email</td>
                         <td align="center"><span class="white-text">Name</td>
+                        <td align="center"><span class="white-text">Real_name</td>
                         <td align="center"><span class="white-text">Role</td>
+                        <td align="center"><span class="white-text">birth</td>
+                        <td align="center"><span class="white-text">gender</td>
                         <td align="center">Edit</td>
                     </tr>
                 </thead>
@@ -35,7 +38,10 @@
                             <td align="center">{{ $count }}</td>
                             <td align="center"><a href="{{ route('user.show',['id' => $user['id']]) }}" target="_blank">{{ $user['email'] }}</a></td>
                             <td align="center">{{ $user['name'] }}</td>
+                            <td align="center">{{ $user['real_name'] }}</td>
                             <td align="center">{{ $user['role'] == 0 ? 'User' : 'Cộng tác viên' }}</td>
+                            <td align="center">{{ $user['birth'] }}</td>
+                            <td align="center">{{ $user['gender'] == 1 ? 'Nam' : 'Nu' }}</td>
                             <td align="center"><a href="{{ route('user.edit.form',['id' => $user['id']]) }}" class="templatemo-edit-btn">Edit</a></td>
                         </tr>
                         @php $count++; @endphp

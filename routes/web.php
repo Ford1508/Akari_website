@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogOnUserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,11 +18,22 @@ Route::group(['namespace' => 'Client'], function () {
     Route::get('/', 'HomeController@index')->name('web.home');
 });
 
-Route::get('/userprofile', function () {
-    return view('web/userprofile');
-});
+// Route::get('/userprofile', function () {
+//     return view('web/userprofile');
+// });
 
-Route::get('userprofile/{id}','UserController@userprofile')->name('web.userprofile');
+Route::get('/user/{id}', 'LogOnUserController@profile')->name('web.user.profile');
+Route::get('/user/edit/{id}','LogOnUserController@edit')->name('web.user.edit.form');
+Route::post('/user/edit/{id}', 'LogOnUserController@update')->name('web.user.edit');
+Route::get('/user/editavatar/{id}', 'LogOnUserController@editimg')->name('web.user.uploadimg.form');
+Route::post('/user/editavatar/{id}', 'LogOnUserController@updateimg')->name('web.user.uploadimg');
+
+// Route::post('/user/{id}','LogOnUserController@update')->name('web.user.profile.edit');
+// Route::get('/userprofile/{id}','UserController@userprofile')->name('web.userprofile');
+
+Route::get('/editprofile', function () {
+    return view('web/user/edit');
+});
 
 
 Route::get('/achiver', function () {

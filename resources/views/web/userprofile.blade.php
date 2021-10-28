@@ -77,12 +77,15 @@
                             <div class="row mt-3">
                             <div class="col-md-12"><label class="labels">国</label><input type="text" class="form-control" placeholder="country"/></div>
                         </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"><span class="font-weight-bold">保存</span></button>
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"><a href=""><span class="font-weight-bold">保存</span></a></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <script src="js/app.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <!-- custom js file link  -->
+        <script src="{{ asset('assets/web/script/script.js') }}"></script>
     </body>
 </html>

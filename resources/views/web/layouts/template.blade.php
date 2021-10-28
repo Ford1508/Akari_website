@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- custom css file link  -->
     <link rel="stylesheet" href="{{ asset('assets/web/css/style.css') }}">
+
+    
+
 </head>
 <body>
 <!-- header section starts  -->
@@ -57,7 +60,7 @@
                 <div class="dropdown-content">
                     <a href="#">Bài đăng của tôi</a>
                     <a href="#">Lưu trữ</a>
-                    <a href="#">Thông tin cá nhân</a>
+                    <a href="{{ route('web.user.profile', Auth::user()->id) }}">Thông tin cá nhân</a>
                     <a href="{{ route('web.handle.logout') }}">Logout</a>
                 </div>
             </div>
