@@ -41,7 +41,7 @@
                             <td align="center">{{ $user['real_name'] }}</td>
                             <td align="center">{{ $user['role'] == 0 ? 'User' : 'Cộng tác viên' }}</td>
                             <td align="center">{{ $user['birth'] }}</td>
-                            <td align="center">{{ $user['gender'] == 1 ? 'Nam' : 'Nu' }}</td>
+                            <td align="center">{{ $user['gender'] == 1 ? '男性' : '女性' }}</td>
                             <td align="center"><a href="{{ route('user.edit.form',['id' => $user['id']]) }}" class="templatemo-edit-btn">Edit</a></td>
                         </tr>
                         @php $count++; @endphp

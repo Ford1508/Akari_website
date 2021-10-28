@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -30,10 +30,7 @@
             }
         </style>
     </head>
-{{-- @extends('web.layouts.template') --}}
-{{-- @section('title','profile') --}}
     <body style="background-color: rgb(255, 225, 185)">
-{{-- @section('content')   --}}
         <header>
             <div id="menu-bar" class="fas fa-bars"></div>
             <a href="{{ route('web.home') }}" class="logo"><span>A</span>kari</a>
@@ -86,7 +83,20 @@
                     <a href="{{ route('web.form.login') }}" class="login">Login</a>
                 @endif
             </div>
-        </header>
+        </header> --}}
+        @extends('web.user.usertemplate')
+        @section('customcss')
+        <style>
+            input:hover {
+                border: 2px solid rgb(111, 101, 255);
+                transition: box-shadow 0.3s ease-in-out;
+                transition: transform .4s;
+                transform: scale(1.03); 
+                box-shadow: 0 0 30px 0 rgb(230, 230, 230);
+            }
+        </style>
+        @endsection
+        @section('content')
         <form class="container " action="{{ route('web.user.edit', ['id' => $user->id]) }}" method="POST" style="margin-top:5%">
             @csrf
             <div class="container rounded bg-white mt-5 mb-5 w-50 p-5" style="margin-top:5%"class="border border-primary">
@@ -148,8 +158,8 @@
                 </div>
             </div>
         </form>
-
-        <section class="footer">
+        @endsection
+        {{-- <section class="footer">
             <div class="box-container">
                 <div class="box">
                     <h3>about us</h3>
@@ -187,4 +197,4 @@
         <!-- custom js file link  -->
         <script src="{{ asset('assets/web/script/script.js') }}"></script>
     </body>
-</html>
+</html> --}}

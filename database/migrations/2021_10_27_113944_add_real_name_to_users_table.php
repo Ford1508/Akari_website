@@ -14,7 +14,7 @@ class AddRealNameToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('real_name')->unique()->after('email');
+            $table->string('real_name')->nullable();;
         });
     }
 

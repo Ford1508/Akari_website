@@ -1,17 +1,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="{{ asset('assets/web/css/style.css') }}">
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel</title>
+        <!-- Fonts -->
+        <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="{{ asset('assets/web/css/style.css') }}">
+        <style>
+            input[readonly]{
+                background-color:white;
+                border: 1em;
+                font-size: 1.2em;
+            }
+        </style>
+        @yield('customcss')
+    </head>
+<body style="background-color: rgb(255, 225, 185)">
 <!-- header section starts  -->
 <header>
     <div id="menu-bar" class="fas fa-bars"></div>
@@ -67,7 +78,7 @@
                     <a href="{{ route('web.handle.logout') }}">サインアウト</a>
                 </div>
             </div>
-            <a class="icon" style="color: white" href="#"><span style="font-size: 3em">+</span></a>
+            {{-- <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a> --}}
         @else
             <a href="{{ route('web.form.login') }}" class="login">Login</a>
         @endif
@@ -82,18 +93,6 @@
 @yield('content')
 
 <!-- brand section  -->
-<section class="brand-container">
-    <div class="swiper-container brand-slider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{{ asset('assets/web/images/1.jpg') }}" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/web/images/2.jpg') }}" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/web/images/3.jpg') }}" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/web/images/4.jpg') }}" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/web/images/5.jpg') }}" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/web/images/6.jpg') }}" alt=""></div>
-        </div>
-    </div>
-</section>
 <!-- footer section  -->
 <section class="footer">
     <div class="box-container">
@@ -128,6 +127,7 @@
     </div>
     <h1 class="credit"> created by <span> team Akari </span> | all rights reserved! </h1>
 </section>
+<script src="js/app.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <!-- custom js file link  -->
 <script src="{{ asset('assets/web/script/script.js') }}"></script>

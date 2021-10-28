@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Auth;
 */
 Route::group(['namespace' => 'Client'], function () {
     Route::get('/', 'HomeController@index')->name('web.home');
+    Route::get('/achiver', 'HomeController@achiver')->name('web.achiver');
+    Route::get('/postgallery', 'HomeController@postgallery')->name('web.postgallery');
 });
 
 // Route::get('/userprofile', function () {
@@ -35,14 +37,6 @@ Route::get('/editprofile', function () {
     return view('web/user/edit');
 });
 
-
-Route::get('/achiver', function () {
-    return view('web/achiver');
-});
-
-Route::get('/postgallery', function () {
-    return view('web/postgallery');
-});
 
 // Client
 Route::group(['namespace' => 'Auth'], function () {

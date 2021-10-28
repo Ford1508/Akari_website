@@ -16,4 +16,14 @@ class HomeController extends Controller
     {
         return view('web.home');
     }
+
+    public function achiver()
+    {
+        return view('web.achiver');
+    }
+
+    public function postgallery()
+    {
+        return view('web.postgallery');
+    }
 }
