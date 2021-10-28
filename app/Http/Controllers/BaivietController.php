@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\CtvPost;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 
@@ -37,8 +37,17 @@ class BaivietController extends Controller
      */
     public function store(Request $request)
     {
-    $data = new Post;
-    
+    $data = new CtvPost;
+    $data->name=$request->name;
+    $data->title=$request->title;
+    $data->adress=$request->adress;
+    $data->theme=$request->theme;
+    $data->type=$request->type;
+    $data->price=$request->price;
+    $data->location=$request->location;
+    $data->content=$request->content;
+    $data->save();
+    return view('web.postgallery');
     }
 
     /**

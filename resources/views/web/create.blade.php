@@ -110,35 +110,35 @@ font-size: 16px;
             <div class="row">
                 <label class="name-input" for="decrip">記述</label>
 
-                <input type="name" class="input" id="decrip" placeholder="">
+                <input type="name" class="input" id="decrip" placeholder="" name="title">
             </div>
             <div class="row">
                 <label class="name-input" for="description">住所<span class="req">*</span></label>
 
-                <input type="description" class="input" id="description" placeholder="">
+                <input type="description" class="input" id="description" placeholder="" name="adress">
             </div>
             <div class="row">
-                <label class="name-input" for="type">テーマ<span class="req">*</span></label>
+                <label class="name-input" for="theme">テーマ<span class="req">*</span></label>
                 <div class="choose-input">
-                    <input type="radio" class="radio-input" id="anuong" name="type" value="">
+                    <input type="radio" class="radio-input" id="anuong" name="theme" value="飲食">
                     <label class="radio-input" for="anuong">​飲食</label>
                 </div>
                 <div class="choose-input">
-                    <input type="radio" class="radio-input" id="thamquan" name="type" value="">
+                    <input type="radio" class="radio-input" id="thamquan" name="theme" value="観光">
                     <label class="radio-input" for="thamquan">観光</label>
                 </div>
                 <div class="choose-input">
-                    <input type="radio" class="radio-input" id="giaitri" name="type" value="">
+                    <input type="radio" class="radio-input" id="giaitri" name="theme" value="娯楽">
                     <label class="radio-input" for="giaitri">娯楽</label>
                 </div>
                 <div class="choose-input">
-                    <input type="radio" class="radio-input" id="dichvu" name="type" value="">
+                    <input type="radio" class="radio-input" id="dichvu" name="theme" value="サービス">
                     <label class="radio-input" for="dichvu">サービス</label>
                 </div>
             </div>
             <div class="row">
                 <label class="name-input" for="name">タイプ<span class="req">*</span></label>
-                <select class="name-input option-content">
+                <select class="name-input option-content" name="type">
                     <option>コーヒー</option>
                     <option>ミルクティー</option>
                     <option>オレンジジュース</option>
@@ -147,7 +147,7 @@ font-size: 16px;
             </div>
             <div class="row">
                 <label class="name-input" for="name">市<span class="req">*</span></label>
-                <select class="name-input option-content">
+                <select class="name-input option-content" name="location">
                     <option>Ho Chi Minh</option>
                     <option>Ha Noi</option>
                     <option>Da Nang</option>
@@ -162,7 +162,7 @@ font-size: 16px;
             </div>
             <div class="row">
                 <label class="name-input" for="name">平均の値段<span class="req">*</span></label>
-                <select class="name-input option-content">
+                <select class="name-input option-content" name="price">
                     <option>20.000đ-30.000đ</option>
                     <option>30.000đ-100.000đ</option>
                     <option>100.000đ-300.000đ</option>
