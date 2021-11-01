@@ -1,3 +1,9 @@
+@extends('web.layouts.template')
+
+@section('title','Home')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,13 +22,13 @@
     <title>投稿の詳細</title>
 
     <!-- Bootstrap core CSS -->
-    <link href={{asset('css/bootstrap.min.css')}}rel="stylesheet" />
-
+    <link href="{{ asset('assets/web/css/bootstrap.min.css')}}"rel="stylesheet" >
+    {{-- <link rel="stylesheet" href="{{ asset('assets/web/css/style.css') }}"> --}}
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href={{asset('css/fontawesome.css')}} />
-    <link rel="stylesheet" href={{asset('css/templatemo-stand-blog.css')}} />
-    <link rel="stylesheet" href={{asset('css/owl.css')}} />
-    <link rel="stylesheet" href={{asset('css/themify-icons/themify-icons.css')}} />
+    <link rel="stylesheet" href="{{ asset('assets/web/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/web/css/templatemo-stand-blog.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/web/css/owl.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/web/css/themify-icons/themify-icons.css')}}">
   </head>
 
   <body>
@@ -107,7 +113,7 @@
                   <div class="blog-post">
                     <div class="blog-thumb">
                       <img
-                        src={{asset('image/foody-upload-api-foody-mobile-4-jpg-180705093533.jpg')}}
+                        src={{asset('assets/web/images/foody-upload-api-foody-mobile-4-jpg-180705093533.jpg')}}
                         alt=""
                       />
                     </div>
@@ -199,7 +205,7 @@
                         <li>
                           <div class="author-thumb">
                             <img
-                                src={{asset('image/comment-author-01.jpg')}}
+                                src={{asset('assets/web/images/comment-author-01.jpg')}}
                               alt=""
                             />
                           </div>
@@ -217,7 +223,7 @@
                         <li class="replied">
                           <div class="author-thumb">
                             <img
-                            src={{asset('image/comment-author-02.jpg')}}
+                            src={{asset('assets/web/images/comment-author-02.jpg')}}
                               alt=""
                             />
                           </div>
@@ -232,7 +238,7 @@
                         <li>
                           <div class="author-thumb">
                             <img
-                            src={{asset('image/comment-author-03.jpg')}}
+                            src={{asset('assets/web/images/comment-author-03.jpg')}}
                               alt=""
                             />
                           </div>
@@ -249,7 +255,7 @@
                         <li class="replied">
                           <div class="author-thumb">
                             <img
-                            src={{asset('image/comment-author-02.jpg')}}
+                            src={{asset('assets/web/images/comment-author-02.jpg')}}
                               alt=""
                             />
                           </div>
@@ -324,7 +330,7 @@
                                 id="form-submit"
                                 class="main-button"
                               >
-                                参加する
+                                Enter
                               </button>
                             </fieldset>
                           </div>
@@ -362,7 +368,7 @@
                         <li>
                           <a href="post-details.html">
                             <img
-                            src={{asset('image/blog-thumb-01.jpg')}}
+                            src={{asset('assets/web/images/blog-thumb-01.jpg')}}
                               alt=""
                             />
                             <h5>
@@ -375,7 +381,7 @@
                         <li>
                           <a href="post-details.html">
                             <img
-                            src={{asset('image/blog-thumb-02.jpg')}}
+                            src={{asset('assets/web/images/blog-thumb-02.jpg')}}
                               alt=""
                             />
                             <h5>
@@ -388,7 +394,7 @@
                         <li>
                           <a href="post-details.html">
                             <img
-                            src={{asset('image/blog-thumb-01.jpg')}}
+                            src={{asset('assets/web/images/blog-thumb-01.jpg')}}
                               alt=""
                             />
                             <h5>
@@ -428,7 +434,7 @@
       </div>
     </section>
 
-    <footer>
+    {{-- <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -447,20 +453,20 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer> --}}
 
 
      {{-- Bootstrap core JavaScript  --}}
-    <script src={{asset('jquery/jquery.min.js')}}></script>
-    <script src={{asset('bootstrap/js/bootstrap.bundle.min.js')}}></script>
+    <script src={{asset('assets/web/js/jquery.min.js')}}></script>
+    <script src={{asset('assets/web/js/js/bootstrap.bundle.min.js')}}></script>
 
 
      {{-- Additional Scripts  --}}
-    <script src={{asset('js/custom.js')}}></script>
-    <script src={{asset('js/owl.js')}}></script>
-    <script src={{asset('js/slick.js')}}></script>
-    <script src={{asset('js/isotope.js')}}></script>
-    <script src={{asset('js/accordions.js')}}></script>
+    <script src={{asset('assets/web/js/custom.js')}}></script>
+    <script src={{asset('assets/web/js/owl.js')}}></script>
+    <script src={{asset('assets/web/js/slick.js')}}></script>
+    <script src={{asset('assets/web/js/isotope.js')}}></script>
+    <script src={{asset('assets/web/js/accordions.js')}}></script>
 
 
     <script language = "text/Javascript">
