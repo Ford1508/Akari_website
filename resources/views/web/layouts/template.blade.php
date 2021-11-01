@@ -61,7 +61,13 @@
                     <a href="{{ route('web.handle.logout') }}">Logout</a>
                 </div>
             </div>
+<<<<<<< Updated upstream
             <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a>
+=======
+            @if ($user->role == 1)
+            <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a>
+            @endif
+>>>>>>> Stashed changes
         @else
             <a href="{{ route('web.form.login') }}" class="login">Login</a>
         @endif
