@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,36 +17,36 @@
     <div id="menu-bar" class="fas fa-bars"></div>
     <a href="{{ route('web.home') }}" class="logo"><span>A</span>kari</a>
     <nav class="navbar">
-        <a href="{{ route('web.home') }}">home</a>
+        <a href="{{ route('web.home') }}">ホーム</a>
         <div class="dropdown">
-            <a href="#">Ăn uống</a>
+            <a href="#">​飲食</a>
             <div class="dropdown-content">
-                <a href="#">Thức ăn</a>
-                <a href="#">Thức uống</a>
+                <a href="#">料理</a>
+                <a href="#">飲料</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Du lịch</a>
+            <a href="#">観光</a>
             <div class="dropdown-content">
-                <a href="#">Du lịch sinh thái</a>
-                <a href="#">Resort</a>
-                <a href="#">Bảo tàng mỹ thuật</a>
+                <a href="#">エコツーリズム</a>
+                <a href="#">リゾート</a>
+                <a href="#">美術館や史跡</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Giải trí</a>
+            <a href="#">娯楽</a>
             <div class="dropdown-content">
-                <a href="#">Công viên</a>
-                <a href="#">Siêu thị</a>
-                <a href="#">Rạp chiếu phim</a>
+                <a href="#">公園</a>
+                <a href="#">スーパー</a>
+                <a href="#">映画館</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Dịch vụ</a>
+            <a href="#">サービス</a>
             <div class="dropdown-content">
-                <a href="#">Giặt ủi</a>
-                <a href="#">Xe thuê</a>
-                <a href="#">Spa</a>
+                <a href="#">クリーニング</a>
+                <a href="#">レンタカー</a>
+                <a href="#">スパ</a>
             </div>
         </div>
     </nav>
@@ -55,19 +56,20 @@
             <div class="dropdown">
                 <button class="dropbtn"><i class="fas fa-user" id="login-btn"></i></button>
                 <div class="dropdown-content">
-                    <a href="#">Bài đăng của tôi</a>
-                    <a href="#">Lưu trữ</a>
-                    <a href="#">Thông tin cá nhân</a>
-                    <a href="{{ route('web.handle.logout') }}">Logout</a>
+                    @php  
+                        $user = \App\Models\User::find(Auth::user()->id);
+                    @endphp
+                    @if ($user->role == 1)
+                        <a href="{{ route('web.postgallery') }}" target="_blank">私の投稿</a>
+                    @endif
+                    <a href="{{ route('web.achiver') }}" target="_blank">アーカイバ</a>
+                    <a href="{{ route('web.user.profile', Auth::user()->id) }}" target="_blank">個人情報</a>
+                    <a href="{{ route('web.handle.logout') }}">サインアウト</a>
                 </div>
             </div>
-<<<<<<< Updated upstream
-            <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a>
-=======
             @if ($user->role == 1)
             <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a>
             @endif
->>>>>>> Stashed changes
         @else
             <a href="{{ route('web.form.login') }}" class="login">Login</a>
         @endif
@@ -98,28 +100,28 @@
 <section class="footer">
     <div class="box-container">
         <div class="box">
-            <h3>about us</h3>
+            <h3>私達の情報</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est accusantium voluptas enim nemo facilis sit debitis.</p>
         </div>
         <div class="box">
-            <h3>branch locations</h3>
-            <a href="#">india</a>
-            <a href="#">USA</a>
-            <a href="#">japan</a>
-            <a href="#">france</a>
+            <h3>支店の場所</h3>
+            <a href="#">Ha Noi</a>
+            <a href="#">Hai Phong</a>
+            <a href="#">Da Nang</a>
+            <a href="#">Ho Chi Minh</a>
         </div>
         <div class="box">
-            <h3>quick links</h3>
-            <a href="#">home</a>
-            <a href="#">book</a>
-            <a href="#">packages</a>
-            <a href="#">services</a>
-            <a href="#">gallery</a>
-            <a href="#">review</a>
-            <a href="#">contact</a>
+            <h3>クイックリンク</h3>
+            <a href="#">美術館や史跡</a>
+            <a href="#">料理</a>
+            <a href="#">公園</a>
+            <a href="#">飲料</a>
+            <a href="#">スパ</a>
+            <a href="#">レンタカー</a>
+            <a href="#">クリーニング</a>
         </div>
         <div class="box">
-            <h3>follow us</h3>
+            <h3>フォロー</h3>
             <a href="#">facebook</a>
             <a href="#">instagram</a>
             <a href="#">twitter</a>

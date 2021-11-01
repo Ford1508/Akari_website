@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -15,5 +17,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('web.home');
+    }
+
+    public function achiver()
+    {
+        return view('web.achiver');
+    }
+
+    public function postgallery()
+    {
+        return view('web.postgallery');
     }
 }
