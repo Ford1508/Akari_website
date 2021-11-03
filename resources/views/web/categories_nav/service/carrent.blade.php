@@ -47,7 +47,7 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="#" class="btn">詳細を見る</a>
+                    <a href="{{route('ChiTietBaiViet.index')}}" class="btn">詳細を見る</a>
                 </div>
             </div>
             @endforeach
