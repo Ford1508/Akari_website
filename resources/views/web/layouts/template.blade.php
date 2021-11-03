@@ -126,7 +126,9 @@
                     <a href="{{ route('web.handle.logout') }}">サインアウト</a>
                 </div>
             </div>
-            <a class="icon" style="color: white" href="#"><span style="font-size: 3em">+</span></a>
+            @if ($user->role == 1)
+            <a class="fas fa-plus" id="plus-btn" href="{{route('baiviet.create')}}"></a>
+            @endif
         @else
             <a href="{{ route('web.form.login') }}" class="login">Login</a>
         @endif
