@@ -106,5 +106,7 @@ Route::namespace('Admin')->prefix('ad')->group(function () {
     });
 });
 Route::resource('/baiviet','BaivietController');
+Route::get('/baiviet/accept/{id}','BaivietController@accept')->name('baiviet.accept');
+Route::get('/baiviet/delete/{id}','BaivietController@destroy')->name('baiviet.destroy');
 Route::resource('/ChiTietBaiViet','detailpostcontroller');
 

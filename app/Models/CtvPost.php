@@ -23,6 +23,7 @@ class CtvPost extends Model
     'price',
     'location',
     'content',
+    'status'
     ];
     protected $table = "ctv_posts";
 }

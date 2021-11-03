@@ -49,6 +49,23 @@
                         </tr>
                         @php $count++; @endphp
                     @endforeach
+                    <?php $ctvposts = App\Models\CtvPost::all()->toArray(); ?>
+                    @foreach ($ctvposts as $post)
+                    <tr>
+                            <td align="center">{{ $count }}</td>
+                            <td align="center">{{ $post['type'] }}</td>
+                            <td align="center">{{ $post['name'] }}</td>
+                            <td align="center">{{ $post['status'] == 0 ? 'Waiting' : 'Approved' }}</td>
+                            @if ($post['status'] == 0)
+                                <td align="center"><a href="{{ route('baiviet.accept',['id' => $post['id']]) }}" class="templatemo-edit-btn" onclick="return confirm('Do you want to approve this selected ?');">Accept</a></td>
+                            @else
+                                <td align="center"><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+                            @endif
+                            <td align="center"><a href="" class="templatemo-edit-btn" onclick="return confirm('Đừng sửa :V');">Edit</a></td>
+                            <td align="center"><a href="{{ route('baiviet.destroy',['id' => $post['id']]) }}" class="templatemo-edit-btn" onclick="return confirm('Do you want to delete this selected ?');">Delete</a></td>
+                        </tr>
+                        @php $count++; @endphp
+                    @endforeach
                 </tbody>
             </table>
         </div>

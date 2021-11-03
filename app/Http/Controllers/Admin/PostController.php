@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\CtvPost;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,6 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        
         $posts = Post::join('categories','posts.category_id','=','categories.id')->get(['posts.*','categories.name AS category_name']);
         return view('admin.posts.list',['posts' => $posts]);
     }
