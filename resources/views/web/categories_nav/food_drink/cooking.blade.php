@@ -47,16 +47,15 @@
                         <i class="fas fa-star"></i>
                         <i class="far fa-star"></i>
                     </div>
-                    <a href="javascript:void();" class="btn">詳細を見る</a>
+                    <a href="#" class="btn">詳細を見る</a>
                 </div>
             </div>
             @endforeach
         @endif
     </div>
-    <div class="center" style="margin-left: 5%;" style="margin-top: 50%" style="justify-content: center;">
+    <div class="center" style="margin-left: 5%;" style="margin-top: 50%">
         {!! $posts->links() !!}
     </div>
-
 </section>
 <!-- packages section ends -->
 <!-- services section starts  -->

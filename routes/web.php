@@ -17,6 +17,24 @@ use Illuminate\Support\Facades\Auth;
 // Client
 Route::group(['namespace' => 'Client'], function () {
     Route::get('/', 'HomeController@index')->name('web.home');
+
+
+    // Route::get('/food', 'ViewByCategoriesController@ViewByFood')->name('web.categories_nav.food_drink.cooking');
+    // Route::get('/drink', 'ViewByCategoriesController@ViewByDrink')->name('web.categories_nav.food_drink.drink');
+
+    // Route::get('/ecotourism', 'ViewByCategoriesController@ViewByEcotourism')->name('web.categories_nav.food_drink.ecotourism');
+    // Route::get('/museum', 'ViewByCategoriesController@ViewByMuseum')->name('web.categories_nav.food_drink.museum');
+    // Route::get('/resort', 'ViewByCategoriesController@ViewByResort')->name('web.categories_nav.food_drink.resort');
+
+    // Route::get('/park', 'ViewByCategoriesController@ViewByPark')->name('web.categories_nav.food_drink.park');
+    // Route::get('/supermarket', 'ViewByCategoriesController@ViewBySuperMarket')->name('web.categories_nav.food_drink.supermarket');
+    // Route::get('/theater', 'ViewByCategoriesController@ViewByTheater')->name('web.categories_nav.food_drink.theater');
+
+    // Route::get('/carrent', 'ViewByCategoriesController@ViewByCarRental')->name('web.categories_nav.food_drink.carrent');
+    // Route::get('/laundry', 'ViewByCategoriesController@ViewByLaundry')->name('web.categories_nav.food_drink.laundry');
+    // Route::get('/spa', 'ViewByCategoriesController@ViewBySpa')->name('web.categories_nav.food_drink.spa');
+
+
     Route::get('/achiver', 'HomeController@achiver')->name('web.achiver');
     Route::get('/postgallery', 'HomeController@postgallery')->name('web.postgallery');
 });
@@ -24,6 +42,21 @@ Route::group(['namespace' => 'Client'], function () {
 // Route::get('/userprofile', function () {
 //     return view('web/userprofile');
 // });
+
+Route::get('/food', 'ViewByCategoriesController@ViewByFood')->name('web.categories_nav.food_drink.cooking');
+Route::get('/drink', 'ViewByCategoriesController@ViewByDrink')->name('web.categories_nav.food_drink.drink');
+
+Route::get('/ecotourism', 'ViewByCategoriesController@ViewByEcotourism')->name('web.categories_nav.tourism.ecotourism');
+Route::get('/museum', 'ViewByCategoriesController@ViewByMuseum')->name('web.categories_nav.tourism.museum');
+Route::get('/resort', 'ViewByCategoriesController@ViewByResort')->name('web.categories_nav.tourism.resort');
+
+Route::get('/park', 'ViewByCategoriesController@ViewByPark')->name('web.categories_nav.entertainment.park');
+Route::get('/supermarket', 'ViewByCategoriesController@ViewBySuperMarket')->name('web.categories_nav.entertainment.supermarket');
+Route::get('/theater', 'ViewByCategoriesController@ViewByTheater')->name('web.categories_nav.entertainment.theater');
+
+Route::get('/carrent', 'ViewByCategoriesController@ViewByCarRental')->name('web.categories_nav.service.carrent');
+Route::get('/laundry', 'ViewByCategoriesController@ViewByLaundry')->name('web.categories_nav.service.laundry');
+Route::get('/spa', 'ViewByCategoriesController@ViewBySpa')->name('web.categories_nav.service.spa');
 
 Route::get('/user/{id}', 'LogOnUserController@profile')->name('web.user.profile');
 Route::get('/user/edit/{id}','LogOnUserController@edit')->name('web.user.edit.form');

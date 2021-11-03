@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.home');
+        $posts = Post::orderBy('id', 'DESC')->paginate(10);
+        return view('web.home',['posts' => $posts]);
+        // return view('web.home');
     }
 
     public function achiver()
