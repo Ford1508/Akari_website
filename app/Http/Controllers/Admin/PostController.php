@@ -22,6 +22,12 @@ class PostController extends Controller
         $posts = Post::join('categories','posts.category_id','=','categories.id')->get(['posts.*','categories.name AS category_name']);
         return view('admin.posts.list',['posts' => $posts]);
     }
+    public function ctvindex()
+    {
+        
+        $posts = Post::join('categories','posts.category_id','=','categories.id')->get(['posts.*','categories.name AS category_name']);
+        return view('admin.posts.ctvlist',['posts' => $posts]);
+    }
 
     public static function milliseconds() {
         $mt = explode(' ', microtime());
@@ -98,7 +104,11 @@ class PostController extends Controller
         $post = Post::join('categories','posts.category_id','=','categories.id')->where('posts.id','=',$id)->get(['posts.*','categories.name AS category_name'])->first();
         return view('admin.posts.show',['post' => $post]);
     }
-
+    public function ctvshow($id)
+    {
+        $post = CtvPost::where('ctv_posts.id','=',$id)->get()->first();
+        return view('admin.posts.ctvshow',['post' => $post]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
