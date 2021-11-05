@@ -92,9 +92,9 @@
                 <textarea class="input textarea" id="message" placeholder="Your message here" name="content"></textarea>
             </div>
             <div class="row">
-                <label class="name-input" for="name">添付ファイル<span class="req">*</span></label>
-                <input type="file" value="ビデオ">
-                <input type="file" value="写真">
+                <label class="name-input" for="image">添付ファイル<span class="req">*</span></label>
+                <input type="file" name="video">
+                <input type="file" name="image">
             </div>
             <div class="row">
             <input type="submit" class="button" value="Submit"></div>

@@ -128,6 +128,7 @@ Route::namespace('Admin')->prefix('ad')->group(function () {
         // Post
         Route::group(['prefix'=>'post'],function(){
             Route::get('list','PostController@index')->name('post.list');
+            Route::get('ctvlist','PostController@ctvindex')->name('ctvpost.list');
             Route::get('edit/{id}','PostController@edit')->name('post.edit.form');
             Route::post('edit/{id}','PostController@update')->name('post.edit');
             Route::get('create','PostController@create')->name('post.create.form');
@@ -135,9 +136,12 @@ Route::namespace('Admin')->prefix('ad')->group(function () {
             Route::get('delete/{id}','PostController@destroy')->name('post.delete');
             Route::get('accept/{id}','PostController@accept')->name('post.accept');
             Route::get('show/{id}','PostController@show')->name('post.show');
+            Route::get('ctvshow/{id}','PostController@ctvshow')->name('ctvpost.show');
         });
     });
 });
 Route::resource('/baiviet','BaivietController');
+Route::get('/baiviet/accept/{id}','BaivietController@accept')->name('baiviet.accept');
+Route::get('/baiviet/delete/{id}','BaivietController@destroy')->name('baiviet.destroy');
 Route::resource('/ChiTietBaiViet','detailpostcontroller');
 

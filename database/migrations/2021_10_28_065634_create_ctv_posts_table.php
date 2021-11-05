@@ -23,6 +23,7 @@ class CreateCtvPostsTable extends Migration
             $table->string('price');
             $table->string('location');
             $table->string('content');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

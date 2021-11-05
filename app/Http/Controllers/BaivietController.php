@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CtvPost;
 use App\Models\Category;
@@ -58,7 +58,7 @@ class BaivietController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -69,7 +69,7 @@ class BaivietController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -92,6 +92,19 @@ class BaivietController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = CtvPost::find($id);
+        $post->delete();
+        return redirect()->route('post.list')->with("success","Delete successfully.");
+    }
+        /**
+     * Approve post
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function accept($id)
+    {
+        CtvPost::where('id',$id)->update(['status' => 1]);
+        return redirect()->route('post.list')->with("success","Approve successfully.");
     }
 }

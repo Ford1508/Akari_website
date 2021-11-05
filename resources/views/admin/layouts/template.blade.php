@@ -49,6 +49,7 @@
                     <li><a href="{{ route('category.list') }}"><i class="fa fa-list" aria-hidden="true"></i>Categories</a></li>
                     <li><a href="{{ route('user.list') }}"><i class="fa fa-users fa-fw"></i>Users</a></li>
                     <li><a href="{{ route('post.list') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Posts</a></li>
+                    <li><a href="{{ route('ctvpost.list') }}"><i class="fa fa-newspaper-o" aria-hidden="true"></i>CTVPosts</a></li>
                     <li><a href="{{ route('admin.handle.logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a>
                     </li>
                 </ul>

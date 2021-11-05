@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\CtvPost;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,8 +18,15 @@ class PostController extends Controller
      */
     public function index()
     {
+        
         $posts = Post::join('categories','posts.category_id','=','categories.id')->get(['posts.*','categories.name AS category_name']);
         return view('admin.posts.list',['posts' => $posts]);
+    }
+    public function ctvindex()
+    {
+        
+        $posts = Post::join('categories','posts.category_id','=','categories.id')->get(['posts.*','categories.name AS category_name']);
+        return view('admin.posts.ctvlist',['posts' => $posts]);
     }
 
     public static function milliseconds() {
@@ -96,7 +104,11 @@ class PostController extends Controller
         $post = Post::join('categories','posts.category_id','=','categories.id')->where('posts.id','=',$id)->get(['posts.*','categories.name AS category_name'])->first();
         return view('admin.posts.show',['post' => $post]);
     }
-
+    public function ctvshow($id)
+    {
+        $post = CtvPost::where('ctv_posts.id','=',$id)->get()->first();
+        return view('admin.posts.ctvshow',['post' => $post]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
