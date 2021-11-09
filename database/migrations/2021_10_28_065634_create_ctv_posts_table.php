@@ -24,6 +24,7 @@ class CreateCtvPostsTable extends Migration
             $table->string('location');
             $table->string('content');
             $table->integer('status')->default(0);
+            $table->string('image');
             $table->timestamps();
         });
     }
