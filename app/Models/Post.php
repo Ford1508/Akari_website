@@ -29,4 +29,9 @@ class Post extends Model
         'status'
     ];
     protected $table = "posts";
+
+    public function comment()
+    {
+        return $this->hasMany('App\Models\Comment', 'post_id', 'id');
+    }
 }
