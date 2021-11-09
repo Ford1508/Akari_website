@@ -144,4 +144,7 @@ Route::resource('/baiviet','BaivietController');
 Route::get('/baiviet/accept/{id}','BaivietController@accept')->name('baiviet.accept');
 Route::get('/baiviet/delete/{id}','BaivietController@destroy')->name('baiviet.destroy');
 Route::resource('/ChiTietBaiViet','detailpostcontroller');
+Route::get('/postdetail/{id}','detailpostcontroller@show')->name('web.postdetail');
+Route::get('/showUserProfile/{id}','detailpostcontroller@showUser')->name('web.viewinfo');
 
+Route::post('comment/{id}','CommentController@postComment')->name('web.postdetail.addcomment');

@@ -113,14 +113,14 @@
                   <div class="blog-post">
                     <div class="blog-thumb">
                       <img
-                        src={{asset('assets/web/images/foody-upload-api-foody-mobile-4-jpg-180705093533.jpg')}}
+                        src={{asset('assets/web/images/'.$post->image)}}
                         alt=""
                       />
                     </div>
                     <div class="down-content">
                       <span>食物</span>
-                      <a href="post-details.html"
-                        ><h4>ベトナムの特製料理</h4></a
+                      <a href="{{ route('web.postdetail', $post->id) }}"
+                        ><h4>{{ $post['name']}}</h4></a
                       >
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
@@ -128,8 +128,9 @@
                         <li><a href="#">10 Comments</a></li>
                       </ul>
                       <p>
-                        You can browse different tags such as
-                        <a
+                        {{ $post['content']}}
+                        {{-- You can browse different tags such as --}}
+                        {{-- <a
                           rel="nofollow"
                           href="https://templatemo.com/tag/multi-page"
                           target="_parent"
@@ -145,8 +146,8 @@
                           rel="nofollow"
                           href="https://templatemo.com/tag/video"
                           target="_parent"
-                          >video</a
-                        >, etc. to see more CSS templates. Sed hendrerit rutrum
+                          >video</a --}}
+                        {{-- >, etc. to see more CSS templates. Sed hendrerit rutrum
                         arcu, non malesuada nisi. Sed id facilisis turpis. Donec
                         justo elit, dapibus vel ultricies in, molestie sit amet
                         risus. In nunc augue, rhoncus sed libero et, tincidunt
@@ -161,7 +162,7 @@
                         lorem vel porttitor. Suspendisse et metus nec libero
                         ultrices varius eget in risus. Cras id nibh at erat
                         pulvinar malesuada et non ipsum. Suspendisse id ipsum
-                        leo.
+                        leo. --}}
                       </p>
                       <div class="post-options">
                         <div class="row">
@@ -202,122 +203,57 @@
                     </div>
                     <div class="content">
                       <ul>
-                        <li>
-                          <div class="author-thumb">
-                            <img
-                                src={{asset('assets/web/images/comment-author-01.jpg')}}
-                              alt=""
-                            />
-                          </div>
-                          <div class="right-content">
-                            <h4>Charles Kate<span>May 16, 2020</span></h4>
-                            <p>
-                              Fusce ornare mollis eros. Duis et diam vitae justo
-                              fringilla condimentum eu quis leo. Vestibulum id
-                              turpis porttitor sapien facilisis scelerisque.
-                              Curabitur a nisl eu lacus convallis eleifend
-                              posuere id tellus.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="replied">
-                          <div class="author-thumb">
-                            <img
-                            src={{asset('assets/web/images/comment-author-02.jpg')}}
-                              alt=""
-                            />
-                          </div>
-                          <div class="right-content">
-                            <h4>Thirteen Man<span>May 20, 2020</span></h4>
-                            <p>
-                              In porta urna sed venenatis sollicitudin. Praesent
-                              urna sem, pulvinar vel mattis eget.
-                            </p>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="author-thumb">
-                            <img
-                            src={{asset('assets/web/images/comment-author-03.jpg')}}
-                              alt=""
-                            />
-                          </div>
-                          <div class="right-content">
-                            <h4>Belisimo Mama<span>May 16, 2020</span></h4>
-                            <p>
-                              Nullam nec pharetra nibh. Cras tortor nulla,
-                              faucibus id tincidunt in, ultrices eget ligula.
-                              Sed vitae suscipit ligula. Vestibulum id turpis
-                              volutpat, lobortis turpis ac, molestie nibh.
-                            </p>
-                          </div>
-                        </li>
-                        <li class="replied">
-                          <div class="author-thumb">
-                            <img
-                            src={{asset('assets/web/images/comment-author-02.jpg')}}
-                              alt=""
-                            />
-                          </div>
-                          <div class="right-content">
-                            <h4>Thirteen Man<span>May 22, 2020</span></h4>
-                            <p>
-                              Mauris sit amet justo vulputate, cursus massa
-                              congue, vestibulum odio. Aenean elit nunc, gravida
-                              in erat sit amet, feugiat viverra leo.
-                            </p>
-                          </div>
-                        </li>
+                        @if (count($post->comment)>0)
+                          @foreach ($post->comment as $cm)
+                            <li>
+                              <div class="author-thumb">
+                                <img
+                                    src={{asset('assets/web/images/'.$cm->user->image)}}
+                                  alt=""
+                                />
+                              </div>
+                              <div class="right-content">
+                                <h4 target="_blank"> <a href="{{ route('web.viewinfo',['id' => $cm->user['id']]) }}"> {{ $cm->user->name }} </a> <span>May 16, 2020</span></h4>
+                                <p>
+                                  {{$cm->content}}
+                                </p>
+                              </div>
+                            </li>
+                          @endforeach
+                        @endif
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-12">
+                  @if (Auth::check())
                   <div class="sidebar-item submit-comment">
+                    @if(session('メッセージ'))
+                      {{session('メッセージ')}}
+                    @endif
                     <div class="sidebar-heading">
                       <h2>あなたのコメント</h2>
                     </div>
                     <div class="content">
-                      <form id="comment" action="#" method="post">
+                      <form id="comment" action= "{{ route('web.postdetail.addcomment', ['id' => $post->id]) }}" method="post">
+                        @csrf
                         <div class="row">
                           <div class="col-md-6 col-sm-12">
+                            @php  
+                                $user = \App\Models\User::find(Auth::user()->id);
+                            @endphp
                             <fieldset>
-                              <input
-                                name="name"
-                                type="text"
-                                id="name"
-                                placeholder="あなたの名前 "
-                                required=""
-                              />
+                              <div class="sidebar-heading">
+                                <h3> {{ $user->name }} </h3>
+                              </div>
                             </fieldset>
                           </div>
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <input
-                                name="email"
-                                type="text"
-                                id="email"
-                                placeholder="あなたのメール "
-                                required=""
-                              />
-                            </fieldset>
-                          </div>
-                          <div class="col-md-12 col-sm-12">
-                            <fieldset>
-                              <input
-                                name="subject"
-                                type="text"
-                                id="subject"
-                                placeholder="主題"
-                              />
-                            </fieldset>
-                          </div>
+                          <input type = "hidden" name ="_token" value="{{csrf_token()}}" />
                           <div class="col-lg-12">
                             <fieldset>
                               <textarea
-                                name="message"
+                                name="content"
                                 rows="6"
-                                id="message"
                                 placeholder="コメントを入力してください"
                                 required=""
                               ></textarea>
@@ -327,7 +263,6 @@
                             <fieldset>
                               <button
                                 type="submit"
-                                id="form-submit"
                                 class="main-button"
                               >
                                 Enter
@@ -338,6 +273,8 @@
                       </form>
                     </div>
                   </div>
+
+                  @endif
                 </div>
               </div>
             </div>
@@ -365,7 +302,25 @@
                     </div>
                     <div class="content">
                       <ul>
-                        <li>
+                        @if (count($posts)>0)
+                          @foreach ($posts as $item)
+                            <li>
+                              <a href="{{ route('web.postdetail', $item->id) }}">
+                                <img
+                                src={{asset('assets/web/images/'.$item->image)}}
+                                  alt=""
+                                  width="350" 
+                                  height="250"
+                                />
+                                <h5>
+                                  {{ $item['name']}}
+                                </h5>
+                                <span>May 31, 2020</span>
+                              </a>
+                            </li>
+                          @endforeach
+                        @endif
+                        {{-- <li>
                           <a href="post-details.html">
                             <img
                             src={{asset('assets/web/images/blog-thumb-01.jpg')}}
@@ -403,7 +358,7 @@
                             </h5>
                             <span>May 14, 2020</span>
                           </a>
-                        </li>
+                        </li> --}}
                       </ul>
                     </div>
                   </div>
