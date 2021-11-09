@@ -140,4 +140,7 @@ Route::namespace('Admin')->prefix('ad')->group(function () {
 });
 Route::resource('/baiviet','BaivietController');
 Route::resource('/ChiTietBaiViet','detailpostcontroller');
+Route::get('/postdetail/{id}','detailpostcontroller@show')->name('web.postdetail');
+Route::get('/showUserProfile/{id}','detailpostcontroller@showUser')->name('web.viewinfo');
 
+Route::post('comment/{id}','CommentController@postComment')->name('web.postdetail.addcomment');

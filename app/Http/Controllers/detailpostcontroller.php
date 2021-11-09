@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class detailpostcontroller extends Controller
@@ -13,7 +16,9 @@ class detailpostcontroller extends Controller
      */
     public function index()
     {
-        return view('web.postdetail');
+        $posts = Post::orderBy('id', 'DESC')->paginate(3);
+        return view('web.postdetail',['posts' => $posts]);
+        // return view('web.postdetail');
     }
 
     /**
@@ -45,7 +50,24 @@ class detailpostcontroller extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        $posts = Post::orderBy('id', 'DESC')->paginate(3);
+        if($post){
+            return view('web.postdetail' ,['post' => $post], ['posts' => $posts]);
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function showUser($id)
+    {
+        $comments = Comment::find($id);
+        $user = $comments->user;
+        if($user){
+            return view('web.viewinfo',['user' => $user]);
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
