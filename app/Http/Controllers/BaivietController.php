@@ -28,7 +28,13 @@ class BaivietController extends Controller
     {
         return view('web.create');
     }
-
+    public static function milliseconds() {
+        $mt = explode(' ', microtime());
+        return ((int)$mt[1]) * 1000 + ((int)round($mt[0] * 1000));
+    }
+    public static function createName($name, $extension) {
+        return $name.'_'.BaivietController::milliseconds().'.'.$extension;
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -37,6 +43,9 @@ class BaivietController extends Controller
      */
     public function store(Request $request)
     {
+        $extension = $request->image->extension();
+                    $nameimg = BaivietController::createName(str_slug($request->input('name')),$extension);
+                    $request->image->storeAs('/public/images/posts', $nameimg);
     $data = new CtvPost;
     $data->name=$request->name;
     $data->title=$request->title;
@@ -46,6 +55,7 @@ class BaivietController extends Controller
     $data->price=$request->price;
     $data->location=$request->location;
     $data->content=$request->content;
+    $data->image=$nameimg;
     $data->save();
     return view('web.postgallery');
     }
