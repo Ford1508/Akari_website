@@ -36,7 +36,7 @@
         @if (count($posts)>0)
             @foreach ($posts as $post)
             <div class="box">
-                <img src="{{asset('assets/web/images/'.$post->image)}}" alt="">
+                <img src="{{asset('storage/images/posts/'.$post['image']) }}" alt="">
                 <div class="content">
                     <h3> <i class="fas fa-map-marker-alt"></i> {{ $post->name }} </h3>
                     <p>{{ $post->content }}</p>
@@ -52,6 +52,27 @@
             </div>
             @endforeach
         @endif
+            <?php $ctvposts = App\Models\CtvPost::all()->toArray(); ?>
+            @foreach ($ctvposts as $post)
+            @if ($post['status'] == 1)
+            <div class="box">
+                <img src="{{ asset('storage/images/posts/'.$post['image']) }}" width="300" alt="Quả">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> {{ $post['name'] }} </h3>
+                    <p>{{ $post['content'] }}</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+
+                </div>
+            </div>
+            @endif
+            @endforeach
+        
     </div>
     <div class="center" style="margin-left: 5%;" style="margin-top: 50%" style="justify-content: center;">
         {!! $posts->links() !!}
