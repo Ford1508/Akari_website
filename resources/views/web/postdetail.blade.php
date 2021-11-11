@@ -113,7 +113,7 @@
                   <div class="blog-post">
                     <div class="blog-thumb">
                       <img
-                        src="{{asset('assets/web/images/'.$post->image)}}"
+                        src="{{asset('storage/images/posts/'.$post['image'])}}"
                         alt=""
                       />
                     </div>

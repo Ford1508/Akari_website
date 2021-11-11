@@ -27,4 +27,8 @@ class CtvPost extends Model
     'image',
     ];
     protected $table = "ctv_posts";
+    public function comment()
+    {
+        return $this->hasMany('App\Models\Comment', 'post_id', 'id');
+    }
 }

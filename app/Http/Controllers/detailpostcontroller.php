@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Post;
+use App\Models\CtvPost;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -58,7 +59,16 @@ class detailpostcontroller extends Controller
             return redirect()->back();
         }
     }
-
+    public function show1($id)
+    {
+        $post = CtvPost::find($id);
+        $posts = CtvPost::orderBy('id', 'DESC')->paginate(3);
+        if($post){
+            return view('web.postdetail' ,['post' => $post], ['posts' => $posts]);
+        } else {
+            return redirect()->back();
+        }
+    }
     public function showUser($id)
     {
         $comments = Comment::find($id);

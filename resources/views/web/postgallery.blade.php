@@ -95,7 +95,7 @@
                                     <?php $ctvposts = App\Models\CtvPost::all()->toArray(); ?>
                                     @foreach ($ctvposts as $post)
                                         <div class="col-6 col-sm-4 col-md-3 p-2">
-                                            <a href="https://www.w3schools.com/">
+                                            <a href="{{route('web.postdetail1',['id' => $post['id']])}}">
                                                 <div class="card-1">
                                                     <img src="{{ asset('storage/images/posts/'.$post['image']) }}" class="card-img-top" alt="...">
                                                     <div class="card-body">
