@@ -149,3 +149,5 @@ Route::get('/postdetail1/{id}','detailpostcontroller@show1')->name('web.postdeta
 Route::get('/showUserProfile/{id}','detailpostcontroller@showUser')->name('web.viewinfo');
 
 Route::post('comment/{id}','CommentController@postComment')->name('web.postdetail.addcomment');
+Route::get('like/{id}','LikeController@postLike')->name('web.postdetail.like');
+Route::get('unlike/{id}','LikeController@postUnLike')->name('web.postdetail.unlike');
