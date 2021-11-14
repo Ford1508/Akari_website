@@ -1,3 +1,9 @@
+@extends('web.layouts.template')
+
+@section('title','Home')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -77,7 +83,7 @@
             }
         </style>
     </head>
-    <body style="background-image: url('https://itvn.blog/wp-content/uploads/2020/07/Top-50-h%C3%ACnh-n%E1%BB%81n-m%C3%A1y-t%C3%ADnh-4k-%C4%91%E1%BA%B9p-v%C3%A0-ch%E1%BA%A5t-l%C6%B0%E1%BB%A3ng-nh%E1%BA%A5t-scaled.jpg')">
+    <body style="background-color: rgb(255, 225, 185)">
         <div style="margin-top: 5%"></div>
         <div>
             <div class="container" style="background-color: rgb(99, 99, 99)">
@@ -88,7 +94,7 @@
                             <h1 class="text-light">私の投稿</h1>
                         </div>
                         <div style="margin-top: 1em"></div>
-                        <div class="card-body" style="background-image: url('https://cdn.wallpapersafari.com/73/91/pw678m.jpg')">
+                        <div class="card-body" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=')">
                             <div className="row mt-2">
                                 <div class="container-fluid">
                                     <div class="row pre-scrollable">
