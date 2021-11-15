@@ -1,3 +1,9 @@
+@extends('web.layouts.template')
+
+@section('title','Home')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -88,7 +94,7 @@
                             <h1 class="text-light">私の投稿</h1>
                         </div>
                         <div style="margin-top: 1em"></div>
-                        <div class="card-body" style="background-image: url('https://cdn.wallpapersafari.com/73/91/pw678m.jpg')">
+                        <div class="card-body" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=')">
                             <div className="row mt-2">
                                 <div class="container-fluid">
                                     <div class="row pre-scrollable">

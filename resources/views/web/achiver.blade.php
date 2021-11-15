@@ -111,7 +111,7 @@
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('assets/web/css/post.css')}}" rel="stylesheet" type="text/css">
     </head>
-    <body style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX///+nxBvIAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=')">
+    <body style="background-color: rgb(255, 225, 185)">
         <div style="margin-top: 5%"></div>
         <div>
             <div class="container" style="background-color: rgb(99, 99, 99)">
