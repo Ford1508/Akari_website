@@ -142,6 +142,8 @@ Route::namespace('Admin')->prefix('ad')->group(function () {
 });
 Route::resource('/baiviet','BaivietController');
 Route::get('/baiviet/accept/{id}','BaivietController@accept')->name('baiviet.accept');
+Route::get('/baiviet/edit/{id}','BaivietController@edit')->name('baiviet.edit');
+Route::post('/baiviet/update/{id}','BaivietController@update')->name('baiviet.update');
 Route::get('/baiviet/delete/{id}','BaivietController@destroy')->name('baiviet.destroy');
 Route::resource('/ChiTietBaiViet','detailpostcontroller');
 Route::get('/postdetail/{id}','detailpostcontroller@show')->name('web.postdetail');

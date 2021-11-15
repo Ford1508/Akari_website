@@ -79,7 +79,8 @@ class BaivietController extends Controller
      */
     public function edit($id)
     {
-
+        $post = CtvPost::find($id);
+        return view('web.edit',['post' => $post]);
     }
 
     /**
@@ -91,7 +92,29 @@ class BaivietController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $rules = [
+            'image' => ['required']
+        ];
+        $validator = \Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $extension = $request->image->extension();
+                    $nameimg = BaivietController::createName(str_slug($request->input('name')),$extension);
+                    $request->image->storeAs('/public/images/posts', $nameimg);
+        $data = CtvPost::find($id);
+        $data->name=$request->name;
+        $data->title=$request->title;
+        $data->adress=$request->adress;
+        $data->theme=$request->theme;
+        $data->type=$request->type;
+        $data->price=$request->price;
+        $data->location=$request->location;
+        $data->content=$request->content;
+        $data->image=$nameimg;
+        $data->save();
+        return view('web.postgallery');
     }
 
     /**
