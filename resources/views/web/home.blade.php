@@ -36,7 +36,7 @@
         @if (count($posts)>0)
             @foreach ($posts as $post)
             <div class="box">
-                <img src="{{asset('storage/images/posts/'.$post['image']) }}" alt="">
+                <img src="{{asset('assets/web/images/'.$post['image']) }}" alt="">
                 <div class="content">
                     <h3> <i class="fas fa-map-marker-alt"></i> {{ $post->name }} </h3>
                     <p>{{ $post->content }}</p>
