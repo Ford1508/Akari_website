@@ -153,3 +153,6 @@ Route::get('/showUserProfile/{id}','detailpostcontroller@showUser')->name('web.v
 Route::post('comment/{id}','CommentController@postComment')->name('web.postdetail.addcomment');
 Route::get('like/{id}','LikeController@postLike')->name('web.postdetail.like');
 Route::get('unlike/{id}','LikeController@postUnLike')->name('web.postdetail.unlike');
+Route::post('ctvcomment/{id}','CommentController@ctvpostComment')->name('web.ctvpostdetail.ctvaddcomment');
+Route::get('ctvlike/{id}','LikeController@ctvpostLike')->name('web.ctvpostdetail.ctvlike');
+Route::get('ctvunlike/{id}','LikeController@ctvpostUnLike')->name('web.ctvpostdetail.ctvunlike');

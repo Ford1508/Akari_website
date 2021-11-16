@@ -64,7 +64,7 @@ class detailpostcontroller extends Controller
         $post = CtvPost::find($id);
         $posts = CtvPost::orderBy('id', 'DESC')->paginate(3);
         if($post){
-            return view('web.postdetail' ,['post' => $post], ['posts' => $posts]);
+            return view('web.ctvpostdetail' ,['post' => $post], ['posts' => $posts]);
         } else {
             return redirect()->back();
         }
