@@ -52,6 +52,26 @@
             </div>
             @endforeach
         @endif
+        <?php $ctvposts = App\Models\CtvPost::all()->toArray(); ?>
+        @foreach ($ctvposts as $post)
+            @if ($post['status'] == 1 and $post['category_id'] == 11)
+            <div class="box">
+                <img src="{{ asset('storage/images/posts/'.$post['image']) }}" width="300" alt="Quả">
+                <div class="content">
+                    <h3> <i class="fas fa-map-marker-alt"></i> {{ $post['name'] }} </h3>
+                    <p>{{ $post['content'] }}</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <a href="{{ route('web.postdetail1',['id' => $post['id']])}}" class="btn">詳細を見る</a>
+                </div>
+            </div>
+            @endif
+        @endforeach
     </div>
     <div class="center" style="margin-left: 5%;" style="margin-top: 50%">
         {!! $posts->links() !!}

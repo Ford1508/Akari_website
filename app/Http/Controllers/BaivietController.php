@@ -56,6 +56,7 @@ class BaivietController extends Controller
     $data->location=$request->location;
     $data->content=$request->content;
     $data->image=$nameimg;
+    $data->category_id=$request->category;
     $data->save();
     return view('web.postgallery');
     }

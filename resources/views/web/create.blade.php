@@ -55,6 +55,18 @@
                 </div>
             </div>
             <div class="row">
+                @php
+                $categories = \App\Models\Category::all();
+                @endphp
+                <label class="name-input" for="category">Category<span class="req">*</span></label>
+                    @foreach ($categories as $item)
+                        <div class="choose-input">
+                            <input type="radio" class="radio-input" id="anuong" name="category" value="{{$item->id}}">
+                            <label class="radio-input" for="anuong">{{$item->name}}</label>
+                        </div>
+                    @endforeach
+            </div>
+            <div class="row">
                 <label class="name-input" for="name">タイプ<span class="req">*</span></label>
                 <select class="name-input option-content" name="type">
                     <option>コーヒー</option>
